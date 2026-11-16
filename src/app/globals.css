@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #080A0F;
+  --color-dark-secondary: #10141D;
+  --color-dark-card: #141A25;
+  --color-accent: #4385FF;
+  --color-violet: #9067FF;
+  --color-cyan: #39D9F2;
+  --color-text-primary: #F5F7FC;
+  --color-text-secondary: #A0A9B8;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+:root {
+  --background: #080a0f;
+  --foreground: #f5f7fc;
+  --dark-bg: #080a0f;
+  --dark-secondary: #10141d;
+  --dark-card: #141a25;
+  --accent: #4385ff;
+  --violet: #9067ff;
+  --cyan: #39d9f2;
+  --text-primary: #f5f7fc;
+  --text-secondary: #a0a9b8;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #080a0f;
+  color: #f5f7fc;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c2738;
+  border-radius: 4px;
+  border: 1px solid rgba(67, 133, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4385ff;
+}
+
+/* Glass Card Utilities */
+.glass-card {
+  background: rgba(20, 26, 37, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(67, 133, 255, 0.35);
+  box-shadow: 0 12px 38px 0 rgba(67, 133, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Gradient Text Utilities */
+.gradient-text {
+  background: linear-gradient(135deg, #4385ff 0%, #9067ff 50%, #39d9f2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(135deg, #f5f7fc 0%, #a0a9b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #4385ff 0%, #39d9f2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Utilities */
+.glow-blue {
+  box-shadow: 0 0 25px rgba(67, 133, 255, 0.25);
+}
+
+.glow-blue-lg {
+  box-shadow: 0 0 45px rgba(67, 133, 255, 0.35);
+}
+
+.glow-violet {
+  box-shadow: 0 0 25px rgba(144, 103, 255, 0.25);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(57, 217, 242, 0.25);
+}
+
+/* Animated Grid Background */
+.animated-grid {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.animated-grid-lg {
+  background-image: linear-gradient(to right, rgba(67, 133, 255, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(67, 133, 255, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Custom Cursor (Desktop Only) */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor {
+    cursor: default;
+  }
+}
+
+/* Focus Visible */
+*:focus-visible {
+  outline: 2px solid #4385ff;
+  outline-offset: 3px;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

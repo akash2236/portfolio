@@ -1,0 +1,11 @@
+RESUME PLACEMENT INSTRUCTIONS
+============================
+Your verified resume is placed at:
+public/resume.pdf
+
+The "Download Resume" buttons across the portfolio navigation, hero section, and interactive terminal directly link to this file.
+When updating your resume in the future:
+1. Export your updated resume as a PDF file.
+2. Name the file exactly 'resume.pdf'.
+3. Replace the existing 'public/resume.pdf' file with your new document.
+4. Deploy the updated project to Vercel or your hosting provider.
